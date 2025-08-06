@@ -17,7 +17,7 @@ A full-featured HRMS (Human Resource Management System) platform for businesses 
 - ✅ **Compliance & Reporting**
 - 🌐 **Public-facing marketing website**
 
----
+
 
 ## 🧱 Tech Stack
 
