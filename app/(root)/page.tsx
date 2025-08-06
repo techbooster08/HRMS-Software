@@ -1,7 +1,9 @@
-
+import Hero from '@/components/public-website/Hero';
+import Features from '@/components/public-website/Fetaures';
 export default function Home() {
   return (<>
-    <h1 className="text-blue-500 p-10 text-2xl">Welcome to HRMS Software <i className="fa-brands fa-facebook"/> </h1>
+  <Hero />
+  <Features />
   </>
   );
 }

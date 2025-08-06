@@ -9,17 +9,17 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-blue-600/70 to-purple-600/70 backdrop-blur-[1px]"></div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 py-20">
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 py-20">
         <span className="text-sm font-semibold tracking-widest bg-white/20 px-4 py-1 rounded-full mb-4">
           Revolutionary HR Technology
         </span>
 
-        <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
+        <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
           Transform Your <br />
           <span className="text-white">HR Operations</span>
         </h1>
 
-        <p className="mt-6 max-w-2xl text-lg font-medium text-white/90">
+        <p className="mt-6 max-w-2xl text-lg font-medium  text-white/90">
           Experience the future of human resource management with our groundbreaking HRMS platform.
           <span className="font-semibold text-white"> Automate everything</span>, boost productivity by <span className="font-semibold text-white">300%</span>, and revolutionize your workforce.
         </p>
