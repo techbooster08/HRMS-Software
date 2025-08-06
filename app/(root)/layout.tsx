@@ -11,9 +11,9 @@ export default function PublicSiteLayout({
 }>) {
   return (
     <>
-    <Header/>
-    {children} 
-    <Footer/> 
+      <Header />
+      {children}
+      <Footer />
     </>
   );
 }

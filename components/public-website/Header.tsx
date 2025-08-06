@@ -1,51 +1,148 @@
-import React from 'react'
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBuilding, faUserGear, faMoneyBill, faClock, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { ChevronDown } from "lucide-react";
 
 const Header = () => {
-    return (
-        <>
-            <div className="navbar bg-base-100 shadow-sm">
-                <div className="navbar-start">
-                    <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
-                        </div>
-                        <ul
-                            tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            <li><a>Item 1</a></li>
-                            <li>
-                                <a>Parent</a>
-                                <ul className="p-2">
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
-                                </ul>
-                            </li>
-                            <li><a>Item 3</a></li>
-                        </ul>
-                    </div>
-                    <a className="btn btn-ghost text-xl">daisyUI</a>
-                </div>
-                <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
-                        <li><a>Item 1</a></li>
-                        <li>
-                            <details>
-                                <summary>Parent</summary>
-                                <ul className="p-2">
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
-                                </ul>
-                            </details>
-                        </li>
-                        <li><a>Item 3</a></li>
-                    </ul>
-                </div>
-                <div className="navbar-end">
-                    <a className="btn">Button</a>
-                </div>
-            </div>
-        </>
-    )
-}
+    const [showProductMenu, setShowProductMenu] = useState(false);
+    const [showSolutionsMenu, setShowSolutionsMenu] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);  
 
-export default Header
+    return (
+        <header className="w-full px-6 py-4 bg-white shadow-sm flex justify-between items-center relative z-50">
+            {/* Logo */}
+            <div className="flex items-center gap-2">
+                <div className="bg-blue-600 p-2 rounded-lg">
+                    <FontAwesomeIcon icon={faBuilding} className="text-white w-4 h-4" />
+                </div>
+                <Link href="/" className="text-blue-600 font-semibold text-lg">
+                    HRMS Software
+                </Link>
+            </div>
+
+            {/* Hamburger for mobile */}
+            <div className="md:hidden">
+                <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                    <FontAwesomeIcon icon={mobileMenuOpen ? faTimes : faBars} className="text-blue-600 w-5 h-5" />
+                </button>
+            </div>
+
+            {/* Nav - Desktop */}
+            <nav className="hidden md:flex items-center gap-6 text-sm text-gray-700 relative">
+                {/* Product Dropdown */}
+                <div
+                    className="relative"
+                    onMouseEnter={() => setShowProductMenu(true)}
+                    onMouseLeave={() => setShowProductMenu(false)}
+                >
+                    <div className="flex items-center gap-1 cursor-pointer hover:text-blue-600 font-semibold">
+                        Product <ChevronDown size={16} />
+                    </div>
+
+                    {showProductMenu && (
+                        <div className="absolute top-8 left-0 w-64 bg-white shadow-xl rounded-xl py-4 px-4 space-y-4 z-50">
+                            <div className="flex items-start gap-3">
+                                <div className="bg-blue-100 text-blue-600 p-2 rounded-xl">
+                                    <FontAwesomeIcon icon={faUserGear} />
+                                </div>
+                                <div>
+                                    <p className="font-semibold">Employee Management</p>
+                                    <p className="text-sm text-gray-500">Complete employee database</p>
+                                </div>
+                            </div>
+                            <div className="flex items-start gap-3">
+                                <div className="bg-green-100 text-green-600 p-2 rounded-xl">
+                                    <FontAwesomeIcon icon={faMoneyBill} />
+                                </div>
+                                <div>
+                                    <p className="font-semibold">Payroll Automation</p>
+                                    <p className="text-sm text-gray-500">Automated salary processing</p>
+                                </div>
+                            </div>
+                            <div className="flex items-start gap-3">
+                                <div className="bg-purple-100 text-purple-600 p-2 rounded-xl">
+                                    <FontAwesomeIcon icon={faClock} />
+                                </div>
+                                <div>
+                                    <p className="font-semibold">Attendance Tracking</p>
+                                    <p className="text-sm text-gray-500">Real-time monitoring</p>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                </div>
+
+                {/* Solutions Dropdown */}
+                <div
+                    className="relative"
+                    onMouseEnter={() => setShowSolutionsMenu(true)}
+                    onMouseLeave={() => setShowSolutionsMenu(false)}
+                >
+                    <div className="flex items-center gap-1 cursor-pointer hover:text-blue-600 font-semibold">
+                        Solutions <ChevronDown size={16} />
+                    </div>
+
+                    {showSolutionsMenu && (
+                        <div className="absolute top-8 left-0 w-64 bg-white shadow-xl rounded-xl py-4 px-4 space-y-4 z-50">
+                            <div>
+                                <p className="text-sm font-semibold text-gray-800 mb-2">By Company Size</p>
+                                <ul className="space-y-1 text-sm text-gray-700">
+                                    <li><a href="#" className="hover:text-blue-600">Small Business (1–50)</a></li>
+                                    <li><a href="#" className="hover:text-blue-600">Medium Enterprise (51–500)</a></li>
+                                    <li><a href="#" className="hover:text-blue-600">Large Enterprise (500+)</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p className="text-sm font-semibold text-gray-800 mb-2">By Industry</p>
+                                <ul className="space-y-1 text-sm text-gray-700">
+                                    <li><a href="#" className="hover:text-blue-600">Healthcare</a></li>
+                                    <li><a href="#" className="hover:text-blue-600">Manufacturing</a></li>
+                                    <li><a href="#" className="hover:text-blue-600">Technology</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    )}
+                </div>
+
+                {/* Other Nav Links */}
+                <a href="#how-it-works" className="hover:text-blue-600 font-semibold">How it Works</a>
+                <a href="#pricing" className="hover:text-blue-600 font-semibold">Pricing</a>
+                <a href="#reviews" className="hover:text-blue-600 font-semibold">Reviews</a>
+                <a href="#demos" className="hover:text-blue-600 font-semibold">Demos</a>
+                <a href="#resources" className="hover:text-blue-600 font-semibold">Resources</a>
+            </nav>
+
+            {/* Desktop Buttons */}
+            <div className="hidden md:flex items-center gap-4">
+                <button className="text-sm text-gray-600 hover:text-blue-600">Sign In</button>
+                <button className="text-sm bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition">
+                    Start Free Trial
+                </button>
+            </div>
+
+            {/* Mobile Menu - Dropdown */}
+            {mobileMenuOpen && (
+                <div className="absolute top-full left-0 w-full bg-white shadow-md flex flex-col p-4 gap-4 text-sm text-gray-700 md:hidden z-40">
+                    <a href="#product" className="hover:text-blue-600 font-semibold">Product</a>
+                    <a href="#solutions" className="hover:text-blue-600 font-semibold">Solutions</a>
+                    <a href="#how-it-works" className="hover:text-blue-600 font-semibold">How it Works</a>
+                    <a href="#pricing" className="hover:text-blue-600 font-semibold">Pricing</a>
+                    <a href="#reviews" className="hover:text-blue-600 font-semibold">Reviews</a>
+                    <a href="#demos" className="hover:text-blue-600 font-semibold">Demos</a>
+                    <a href="#resources" className="hover:text-blue-600 font-semibold">Resources</a>
+                    <div className="flex flex-col gap-2 pt-2 border-t">
+                        <button className="text-sm text-gray-600 hover:text-blue-600">Sign In</button>
+                        <button className="text-sm bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition">
+                            Free Trial
+                        </button>
+                    </div>
+                </div>
+            )}
+        </header>
+    );
+};
+
+export default Header;
