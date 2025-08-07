@@ -23,7 +23,7 @@ const FeatureCard: FC<FeatureCardProps> = ({ title, description, features, image
         <ul className="mt-2 grid grid-cols-2 gap-x-4 gap-y-1 text-sm text-blue-700 list-disc list-outside pl-5 text-justify">
           {features.map((f, i) => (
             <li key={i}
-             className="list-disc list-item leading-snug font-semibold max-sm:text-xs"
+             className="list-disc list-item leading-snug text-md max-sm:text-xs"
             >{f}</li>
           ))}
         </ul>

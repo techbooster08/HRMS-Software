@@ -72,7 +72,7 @@ const Features = () => {
                 </div>
 
 
-                {/* <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl max-w-7xl mx-auto text-center py-16 px-6 mt-6">
+                <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl max-w-7xl mx-auto text-center py-16 px-6 mt-6">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">
                         Ready to Experience the Difference?
                     </h2>
@@ -107,7 +107,7 @@ const Features = () => {
                             <p className="text-sm">Certified Security</p>
                         </div>
                     </div>
-                </div> */}
+                </div>
 
             </section>
 
