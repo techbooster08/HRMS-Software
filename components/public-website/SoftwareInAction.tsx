@@ -110,7 +110,7 @@ export default function SoftwareInAction() {
 
 
       {/* feature */}
-      {/* <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 text-center mt-10">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 text-center mt-10">
         {features.map((feature, index) => (
           <div key={index} className="flex flex-col items-center space-y-3">
             <div className="bg-blue-100 p-4 rounded-full">{feature.icon}</div>
@@ -118,7 +118,7 @@ export default function SoftwareInAction() {
             <p className="text-gray-600">{feature.description}</p>
           </div>
         ))}
-      </div> */}
+      </div>
     </section>
   );
 }

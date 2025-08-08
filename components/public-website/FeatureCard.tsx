@@ -20,17 +20,17 @@ const FeatureCard: FC<FeatureCardProps> = ({ title, description, features, image
       </div>
       <div className="p-4">
         <p className="text-sm  text-gray-600 mb-3 text-justify h-15">{description}</p>
-        <ul className="mt-2 grid grid-cols-2 gap-x-4 gap-y-1 text-sm text-blue-700 list-disc list-outside pl-5 text-justify">
+        <div className="mt-2 grid grid-cols-2 gap-x-2 gap-y-1  pl-2 ">
           {features.map((f, i) => (
-            <li key={i}
-             className="list-disc list-item leading-snug text-md max-sm:text-xs"
-            >{f}</li>
+            <span key={i}
+             className="p-1 rounded-full h-6  text-xs flex justify-center items-center bg-blue-500 opacity-90  text-white font-semibold text-center m-1"
+            >{f}</span>
           ))}
-        </ul>
+        </div>
     
       </div>
     </div>
   );
 };
 
-export default FeatureCard;
+export default FeatureCard;
