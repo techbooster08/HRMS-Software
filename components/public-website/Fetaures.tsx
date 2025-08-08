@@ -57,7 +57,7 @@ const Features = () => {
 
     return (
         <>
-            <section className="bg-[#f5f9ff] py-16 px-4 md:px-12">
+            <section className="bg-[#f5f9ff] py-10 px-4 md:px-12">
                 <div className="max-w-7xl mx-auto text-center">
                     <h2 className="text-3xl md:text-4xl font-bold mb-3 text-black">Our Powerful Features</h2>
                     <p className="text-gray-600 mb-12">
@@ -76,7 +76,7 @@ const Features = () => {
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">
                         Ready to Experience the Difference?
                     </h2>
-                    <p className="text-lg mb-8 max-w-2xl mx-auto">
+                    <p className="text-lg mb-8 max-w-3xl mx-auto">
                         Join thousands of organizations already using our comprehensive HRMS platform to streamline operations and boost productivity.
                     </p>
 
@@ -92,19 +92,19 @@ const Features = () => {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                         <div>
                             <h3 className="text-2xl font-bold">99.9%</h3>
-                            <p className="text-sm">Uptime Guarantee</p>
+                            <p className="text-sm mt-2">Uptime Guarantee</p>
                         </div>
                         <div>
                             <h3 className="text-2xl font-bold">10,000+</h3>
-                            <p className="text-sm">Happy Customers</p>
+                            <p className="text-sm mt-2">Happy Customers</p>
                         </div>
                         <div>
                             <h3 className="text-2xl font-bold">24/7</h3>
-                            <p className="text-sm">Expert Support</p>
+                            <p className="text-sm mt-2">Expert Support</p>
                         </div>
                         <div>
                             <h3 className="text-2xl font-bold">SOC 2</h3>
-                            <p className="text-sm">Certified Security</p>
+                            <p className="text-sm mt-2">Certified Security</p>
                         </div>
                     </div>
                 </div>

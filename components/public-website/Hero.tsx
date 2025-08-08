@@ -1,5 +1,5 @@
 "use client";
-import { FaPlayCircle, FaCheckCircle } from "react-icons/fa";
+import { FaPlayCircle, FaCheckCircle, FaRocket } from "react-icons/fa";
 
 
 const Hero = () => {
@@ -17,9 +17,9 @@ const Hero = () => {
           </span>
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-extrabold leading-tight">
-          Transform Your <br />
-          <span className="text-white">HR Operations</span>
+        <h1 className="text-5xl max-w-max md:text-7xl font-extrabold leading-tight">
+          Transform Your 
+          <span className="text-white"> HR Operations</span>
         </h1>
 
         <div className="w-full flex justify-center my-3">
@@ -31,15 +31,15 @@ const Hero = () => {
           ></div>
         </div>
 
-        <p className="mt-3 max-w-4xl text-xl font-medium  text-white/90">
+        <p className="mt-3 max-w-4xl text-justify text-xl  font-medium  text-white/90">
           Experience the future of human resource management with our groundbreaking HRMS platform.
           <span className="font-semibold text-white"> Automate everything</span>, boost productivity by <span className="font-semibold text-white">300%</span>, and revolutionize your workforceand revolutionize your  workforce workforce.
         </p>
 
         {/* Buttons */}
         <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
-          <button className="bg-white cursor-pointer text-blue-600 font-semibold px-7 py-4 rounded-full hover:bg-blue-100 transition-all">
-            Start Free Trial
+          <button className="bg-white flex items-center gap-3 cursor-pointer text-blue-600 font-semibold px-7 py-4 rounded-full hover:bg-blue-100 transition-all">
+            Start Free Trial <FaRocket />
           </button>
           <button className="bg-white/20 cursor-pointer hover:bg-white/30 transition-all px-7 py-4 rounded-full flex items-center gap-2">
             <FaPlayCircle /> Watch Demo

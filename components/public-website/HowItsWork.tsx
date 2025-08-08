@@ -1,11 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import {
-    FaLock,
-    FaCogs,
-    FaUsers,
-    FaRocket,
-} from "react-icons/fa";
+import {FaLock,FaCogs,FaUsers,FaRocket} from "react-icons/fa";
 
 import softwareWork1 from "@/assets/public-website/Images/softwarework1.jpg";
 import softwareWork2 from "@/assets/public-website/Images/softwarework2.jpg";
@@ -48,7 +43,7 @@ const HowItWorks = () => {
         <section className="py-16 px-4 bg-[#f5f9ff] text-slate-800">
             <div className="max-w-6xl mx-auto text-center">
                 <h2 className="text-3xl font-bold text-slate-900">How Our Software Works</h2>
-                <div className="mt-3 text-lg text-slate-600 flex flex-col items-center">
+                <div className="mt-3 text-lg max-w-3xl mx-auto text-slate-600 flex flex-col items-center">
                     Get up and running in just 4 simple steps. Our streamlined process ensures
                     you are maximizing HR efficiency from day one.
                 </div>
