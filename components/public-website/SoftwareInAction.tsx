@@ -75,7 +75,7 @@ export default function SoftwareInAction() {
           <button
             key={index}
             onClick={() => setActiveIndex(index)}
-            className={`px-3 py-1.5 w-fit sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${
+            className={`px-3 py-1.5 w-fit sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm cursor-pointer font-medium transition-all ${
               activeIndex === index
                 ? 'bg-blue-600 text-white shadow'
                 : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-100'

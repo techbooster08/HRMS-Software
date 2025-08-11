@@ -23,14 +23,14 @@ const FeatureCard: FC<FeatureCardProps> = ({ title, description, features, image
         <div className="mt-2 grid grid-cols-2 gap-x-2 gap-y-1  pl-2 ">
           {features.map((f, i) => (
             <span key={i}
-             className="p-1 rounded-full h-6  text-xs flex justify-center items-center bg-blue-500 opacity-90  text-white font-semibold text-center m-1"
+              className="p-1 rounded-md h-6  text-xs flex justify-center items-center border-1 border-blue-400 opacity-90  text-blue-400 font-semibold hover:bg-blue-400 hover:text-white cursor-pointer text-center m-1"
             >{f}</span>
           ))}
         </div>
-    
+
       </div>
     </div>
   );
 };
 
-export default FeatureCard;
+export default FeatureCard;

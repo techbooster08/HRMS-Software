@@ -17,8 +17,8 @@ const Hero = () => {
           </span>
         </div>
 
-        <h1 className="text-5xl max-w-max md:text-7xl font-extrabold leading-tight">
-          Transform Your 
+        <h1 className="text-5xl  md:text-7xl font-extrabold leading-tigh max-w-3xl mx-auto">
+          Transform Your  
           <span className="text-white"> HR Operations</span>
         </h1>
 
@@ -31,7 +31,7 @@ const Hero = () => {
           ></div>
         </div>
 
-        <p className="mt-3 max-w-4xl text-justify text-xl  font-medium  text-white/90">
+        <p className="mt-3 max-w-4xl text-xl  font-medium  text-white/90">
           Experience the future of human resource management with our groundbreaking HRMS platform.
           <span className="font-semibold text-white"> Automate everything</span>, boost productivity by <span className="font-semibold text-white">300%</span>, and revolutionize your workforceand revolutionize your  workforce workforce.
         </p>

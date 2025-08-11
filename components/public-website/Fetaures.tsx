@@ -60,7 +60,7 @@ const Features = () => {
             <section className="bg-[#f5f9ff] py-10 px-4 md:px-12">
                 <div className="max-w-7xl mx-auto text-center">
                     <h2 className="text-3xl md:text-4xl font-bold mb-3 text-black">Our Powerful Features</h2>
-                    <p className="text-gray-600 mb-12">
+                    <p className="text-gray-600 mb-12 max-w-3xl mx-auto">
                         Experience the most comprehensive HRMS platform with cutting-edge features designed to revolutionize your human resource management and drive organizational success.
                     </p>
 
@@ -81,10 +81,10 @@ const Features = () => {
                     </p>
 
                     <div className="flex flex-col md:flex-row justify-center gap-4 mb-12">
-                        <button className="bg-white text-blue-600 font-medium py-3 px-6 rounded-full hover:bg-gray-100 transition">
+                        <button className="bg-white text-blue-600 font-medium py-3 px-6 rounded-full cursor-pointer hover:bg-gray-100 transition">
                             Start Free Trial
                         </button>
-                        <button className="border border-white text-white font-medium py-3 px-6 rounded-full hover:bg-white hover:text-blue-600 transition">
+                        <button className="border border-white text-white font-medium py-3 px-6 rounded-full cursor-pointer hover:bg-white hover:text-blue-600 transition">
                             View Live Demo
                         </button>
                     </div>

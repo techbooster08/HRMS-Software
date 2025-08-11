@@ -85,7 +85,7 @@ export default function Pricing() {
         <section className="bg-[#f5f9ff] py-12 px-4">
             <div className="text-center mb-8">
                 <h2 className="text-3xl text-black font-bold">Simple, Transparent Pricing</h2>
-                <p className="text-gray-600 mt-2">
+                <p className="text-gray-600 mt-2 max-w-3xl mx-auto">
                     Choose the perfect plan for your organization. All plans include a
                     30-day free trial and can be upgraded or downgraded at any time.
                 </p>
@@ -121,13 +121,13 @@ export default function Pricing() {
                 {plans.map((plan) => (
                     <div
                         key={plan.name}
-                        className={`bg-white rounded-lg shadow-lg p-6  border ${plan.popular ? "border-blue-500 border-2" : "border-gray-200"
+                        className={`bg-white rounded-lg shadow-lg p-5 border ${plan.popular ? "border-blue-500 border-2" : "border-gray-200"
                             }`}
                     >
                         {plan.popular && (
-                            <p className=" text-blue-500 text-sm border-blue-500 border-1 inline-block font-bold text-center py-2 px-3 rounded-full   mb-3">
+                            <span className=" text-white bg-blue-400 text-sm border-blue-500 border-1 inline-block font-semibold text-center py-0.5 px-2 rounded-md mb-3">
                                 Most Popular
-                            </p>
+                            </span>
                         )}
                         <h3 className="text-xl text-black font-semibold">{plan.name}</h3>
                         <p className="text-gray-500">{plan.employees}</p>
@@ -138,7 +138,7 @@ export default function Pricing() {
                             </span>
                         </p>
                         <button
-                            className={`w-full py-2 rounded-lg font-semibold transition ${plan.popular
+                            className={`w-full py-2 rounded-lg font-semibold transition cursor-pointer ${plan.popular
                                 ? "bg-blue-500 text-white hover:bg-blue-600"
                                 : "bg-gray-200 text-black hover:bg-gray-300"
                                 }`}
