@@ -6,11 +6,13 @@ import Pricing from '@/components/public-website/Prising';
 import WhyChooseUs from '@/components/public-website/WhyChooseUs';
 import Testimonials from '@/components/public-website/Testimonials';
 import Demo from '@/components/public-website/Demo';
+import Chatbot from '@/components/public-website/Chatbox';
 
 
 export default function Home() {
   return (<>
     <Hero />
+    <Chatbot />
     <Features />
     <HowItWorks />
     <SoftwareInAction />

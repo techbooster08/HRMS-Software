@@ -68,7 +68,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-10 bg-white" id="reviews">
       <div className="max-w-7xl mx-auto px-4 md:px-12 text-center">
         <h2 className="text-3xl font-bold mb-2 text-black">
           What Our Customers Say
@@ -125,7 +125,7 @@ const Testimonials = () => {
         </Swiper>
 
         {/* Happy clients section */}
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-2xl text-center mt-5">
+        <div className="bg-gradient-to-r from-blue-500 to-blue-800 text-white p-8 rounded-2xl text-center mt-5">
           <h2 className="text-2xl font-bold mb-2">Join 10,000+ Happy Customers</h2>
           <p className="mb-8">
             See why leading companies choose our HRMS platform for their HR

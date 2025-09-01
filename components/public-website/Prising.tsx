@@ -3,6 +3,8 @@
 
 import { useState } from "react";
 import { FaShieldAlt, FaCloud, FaLock, FaSyncAlt } from "react-icons/fa";
+import { FiCheck } from "react-icons/fi";
+import { BsCheckLg } from "react-icons/bs";
 
 export default function Pricing() {
     const [isAnnual, setIsAnnual] = useState(false);
@@ -18,6 +20,7 @@ export default function Pricing() {
                 "Basic Payroll",
                 "Attendance Tracking",
                 "Leave Management",
+                "Email Support",
                 "Email Support",
                 "Mobile App Access",
             ],
@@ -52,7 +55,7 @@ export default function Pricing() {
                 "White-label Options",
                 "Advanced Security",
                 "Custom Training",
-                "SLA Guarantee",
+
             ],
         },
     ];
@@ -82,7 +85,7 @@ export default function Pricing() {
 
 
     return (
-        <section className="bg-[#f5f9ff] py-12 px-4">
+        <section className="bg-[#f5f9ff] py-10 px-2.5" id="pricing">
             <div className="text-center mb-8">
                 <h2 className="text-3xl text-black font-bold">Simple, Transparent Pricing</h2>
                 <p className="text-gray-600 mt-2 max-w-3xl mx-auto">
@@ -117,59 +120,75 @@ export default function Pricing() {
             </div>
 
             {/* Pricing Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-2 rounded-lg ">
                 {plans.map((plan) => (
                     <div
                         key={plan.name}
-                        className={`bg-white rounded-lg shadow-lg p-5 border ${plan.popular ? "border-blue-500 border-2" : "border-gray-200"
-                            }`}
+
+                        className="relative rounded-lg shadow-lg overflow- border transition-transform duration-300 hover:scale-105 active:scale-105 bg-white "
                     >
-                        {plan.popular && (
-                            <span className=" text-white bg-blue-400 text-sm border-blue-500 border-1 inline-block font-semibold text-center py-0.5 px-2 rounded-md mb-3">
-                                Most Popular
-                            </span>
-                        )}
-                        <h3 className="text-xl text-black font-semibold">{plan.name}</h3>
-                        <p className="text-gray-500">{plan.employees}</p>
-                        <p className="text-4xl font-bold my-4 text-black">
-                            ${isAnnual ? plan.yearly : plan.monthly}
-                            <span className="text-lg font-medium text-gray-500">
-                                /{isAnnual ? "year" : "month"}
-                            </span>
-                        </p>
-                        <button
-                            className={`w-full py-2 rounded-lg font-semibold transition cursor-pointer ${plan.popular
-                                ? "bg-blue-500 text-white hover:bg-blue-600"
-                                : "bg-gray-200 text-black hover:bg-gray-300"
-                                }`}
-                        >
-                            Start Free Trial
-                        </button>
-                        <ul className="mt-5 space-y-2 text-gray-700">
-                            {plan.features.map((feature, idx) => (
-                                <li key={idx} className="flex items-center gap-2">
-                                    ✅ <span>{feature}</span>
-                                </li>
-                            ))}
-                        </ul>
+                        {/* Top Gradient with Bottom Curve */}
+                        <div className="relative  bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-800 text-white p-6 pb-16 rounded-b-[50%] rounded-t-lg">
+                            {plan.popular && (
+                                <span className="absolute top-2 right-3 text-white bg-gradient-to-tl from-blue-500 to-zinc-400 text-xs font-semibold  px-3 py-2 rounded-md ">
+                                    Popular
+                                </span>
+                            )}
+                            <div className="text-center">
+                                <h3 className="text-2xl font-bold">{plan.name}</h3>
+                                <p className="opacity-80 my-1">{plan.employees}</p>
+                                <p className="text-5xl font-extrabold mt-7">
+                                    ${isAnnual ? plan.yearly : plan.monthly}
+                                    <span className="text-lg font-medium opacity-80">
+                                        /{isAnnual ? "year" : "month"}
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Features */}
+                        <div className="bg-white p-6  text-gray-700">
+                            <ul className="space-y-3">
+                                {plan.features.map((feature, idx) => (
+                                    <li key={idx} className="flex items-center gap-2 ">
+                                        <span className="border-1 border-gray-400 h-3 w-3 relative">
+                                            <BsCheckLg className="text-green-600 text-lg font-extrabold  absolute top-[-6] " />
+                                        </span>
+                                        <span>{feature}</span>
+                                    </li>
+                                ))}
+                            </ul>
+
+                            {/* Button */}
+                            <button
+                                className={`mt-6 w-full py-2 rounded-lg font-semibold transition ${plan.popular
+                                    ? "bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-800 text-white"
+                                    : "bg-gray-200 text-black hover:bg-gray-300"
+                                    }`}
+                            >
+                                Start Free Trial
+                            </button>
+                        </div>
                     </div>
                 ))}
             </div>
 
-            <div className="bg-white py-10 px-6 rounded-lg max-w-6xl mx-auto mt-10 shadow-sm">
+
+            <div className="bg-white py-7 px-2 rounded-lg max-w-6xl  mx-auto mt-10 shadow-sm">
                 <h2 className="text-center text-xl font-bold mb-8 text-black">All Plans Include</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
                     {features.map((feature, idx) => (
                         <div key={idx} className="flex flex-col items-center">
-                            <div className="bg-blue-100 p-4 rounded-full mb-4">
+                            <div className="bg-blue-100 p-6 lg:p-4  rounded-full mb-4">
                                 {feature.icon}
                             </div>
-                            <h3 className="font-semibold text-black">{feature.title}</h3>
-                            <p className="text-gray-500 text-sm">{feature.description}</p>
+                            <h3 className="font-semibold text-xl lg:text-sm text-black">{feature.title}</h3>
+                            <p className="text-gray-500 text-md lg:text-sm">{feature.description}</p>
                         </div>
                     ))}
                 </div>
             </div>
+
         </section>
     );
 }

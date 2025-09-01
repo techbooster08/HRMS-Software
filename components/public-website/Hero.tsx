@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <div className="relative w-full min-h-screen bg-cover bg-center text-white" style={{ backgroundImage: "url('/hero-bg.jpg')" }}>
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/70 to-purple-500/70 backdrop-blur-[2px]"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/70 to-indigo-600/70 backdrop-blur-[2px]"></div>
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 py-10">

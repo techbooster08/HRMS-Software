@@ -100,17 +100,17 @@ const Header = () => {
                     </div>
 
                     {/* Other Nav Links */}
-                    <a href="#how-it-works" className="hover:text-blue-600 font-semibold text-md whitespace-nowrap">How it Works</a>
-                    <a href="#pricing" className="hover:text-blue-600 font-semibold text-md whitespace-nowrap">Pricing</a>
-                    <a href="#reviews" className="hover:text-blue-600 font-semibold text-md whitespace-nowrap">Reviews</a>
-                    <a href="#demos" className="hover:text-blue-600 font-semibold text-md whitespace-nowrap">Demos</a>
-                    <a href="#resources" className="hover:text-blue-600 font-semibold text-md whitespace-nowrap">Resources</a>
+                    <Link href="/#how-it-works" className="hover:text-blue-600 font-semibold text-md whitespace-nowrap">How it Works</Link>
+                    <Link href="/#pricing" className="hover:text-blue-600 font-semibold text-md whitespace-nowrap">Pricing</Link>
+                    <Link href="/#reviews" className="hover:text-blue-600 font-semibold text-md whitespace-nowrap">Reviews</Link>
+                    <Link href="/#demos" className="hover:text-blue-600 font-semibold text-md whitespace-nowrap">Demos</Link>
+                    <Link href="/#resources" className="hover:text-blue-600 font-semibold text-md whitespace-nowrap">Resources</Link>
                 </nav>
 
                 {/* Desktop Buttons */}
                 <div className="hidden md:flex items-center gap-4 min-w-max">
-                    <button className=" cursor-pointer text-gray-600 font-semibold hover:text-blue-600 text-md">Sign In</button>
-                    <button className="text-md cursor-pointer bg-blue-600 text-white px-4 py-1.5 rounded-full hover:bg-blue-700 transition">
+                    <Link href={'/login'} className=" cursor-pointer text-gray-600 font-semibold hover:text-blue-600 text-md">Sign In</Link>
+                    <button className="text-md cursor-pointer bg-gradient-to-r from-blue-500 to-blue-800 text-white px-4 py-1.5 rounded-full hover:bg-blue-700 transition">
                         Start Free Trial
                     </button>
                 </div>
@@ -125,15 +125,15 @@ const Header = () => {
                 {/* Mobile Menu - Dropdown */}
                 {mobileMenuOpen && (
                     <div className="absolute top-full left-0 w-full bg-white shadow-md flex flex-col p-4 gap-4 text-sm text-gray-700 md:hidden z-40 transition-all duration-300 ">
-                        <a href="#product" className="hover:text-blue-600 font-semibold">Product</a>
-                        <a href="#solutions" className="hover:text-blue-600 font-semibold">Solutions</a>
-                        <a href="#how-it-works" className="hover:text-blue-600 font-semibold">How it Works</a>
-                        <a href="#pricing" className="hover:text-blue-600 font-semibold">Pricing</a>
-                        <a href="#reviews" className="hover:text-blue-600 font-semibold">Reviews</a>
-                        <a href="#demos" className="hover:text-blue-600 font-semibold">Demos</a>
-                        <a href="#resources" className="hover:text-blue-600 font-semibold">Resources</a>
+                        <Link href="/#product" className="hover:text-blue-600 font-semibold">Product</Link>
+                        <Link href="/#solutions" className="hover:text-blue-600 font-semibold">Solutions</Link>
+                        <Link href="/#how-it-works" className="hover:text-blue-600 font-semibold">How it Works</Link>
+                        <Link href="/#pricing" className="hover:text-blue-600 font-semibold">Pricing</Link>
+                        <Link href="/#reviews" className="hover:text-blue-600 font-semibold">Reviews</Link>
+                        <Link href="/#demos" className="hover:text-blue-600 font-semibold">Demos</Link>
+                        <Link href="/#resources" className="hover:text-blue-600 font-semibold">Resources</Link>
                         <div className="flex flex-col gap-2 pt-2 border-t">
-                            <button className="text-sm text-gray-600 hover:text-blue-600">Sign In</button>
+                            <Link href={'/login'} className="text-sm text-center text-gray-600 hover:text-blue-600">Sign In</Link>
                             <button className="text-sm bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition">
                                 Free Trial
                             </button>

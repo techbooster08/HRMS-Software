@@ -40,7 +40,7 @@ const steps = [
 
 const HowItWorks = () => {
     return (
-        <section className="py-16 px-4 bg-[#f5f9ff] text-slate-800">
+        <section className="py-10 px-4  text-slate-800" id="how-it-works">    
             <div className="max-w-6xl mx-auto text-center">
                 <h2 className="text-3xl font-bold text-slate-900">How Our Software Works</h2>
                 <div className="mt-3 text-lg max-w-3xl mx-auto text-slate-600 flex flex-col items-center">
@@ -49,27 +49,26 @@ const HowItWorks = () => {
                 </div>
 
                 {/* Steps Grid */}
-                <div className="mt-16 space-y-20">
+                <div className="mt-10 space-y-8 lg:space-y-20">
                     {steps.map((step, index) => (
                         <div
                             key={step.id}
-                            className={`flex flex-col lg:flex-row items-center gap-10 ${index % 2 === 1 ? "lg:flex-row-reverse" : ""
+                            className={`flex flex-col lg:flex-row items-center gap-8 ${index % 2 === 1 ? "lg:flex-row-reverse" : ""
                                 }`}
                         >
                             {/* Image */}
-                            <div className="flex-1 max-w-xl rounded-2xl overflow-hidden shadow-2xl">
+                            <div className="w-full lg:flex-1 lg:max-w-xl rounded-2xl overflow-hidden shadow-2xl">
                                 <Image
                                     src={step.image}
                                     alt={step.title}
-                                    width={600}
-                                    height={400}
+                                    
                                     className="rounded-2xl object-cover w-full h-full"
                                 />
                             </div>
 
                             {/* Content */}
                             <div className="flex-1 text-left">
-                                <div className="flex items-center gap-4 mb-4">
+                                <div className="flex items-center gap-4 mb-3">
                                     <h2 className="text-5xl font-bold text-blue-100">{String(step.id).padStart(2, "0")}</h2>
                                     <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white text-lg">
                                         {step.icon}
@@ -77,7 +76,7 @@ const HowItWorks = () => {
                                 </div>
 
                                 <h3 className="text-3xl font-bold mb-4 text-gray-900">{step.title}</h3>
-                                <p className="text-gray-600 text-lg mb-4">{step.desc}</p>
+                                <p className="text-gray-600 text-md mb-4">{step.desc}</p>
 
                                 <p className="text-blue-600 font-semibold flex items-center gap-2">
                                     <span className="text-blue-500 text-xl">•</span> Average setup time: 15 minutes
@@ -88,7 +87,7 @@ const HowItWorks = () => {
                 </div>
 
                 {/* Stats */}
-                <div className="mt-20 grid grid-cols-2 sm:grid-cols-4 gap-8 text-center text-base px-8 py-10 rounded-2xl bg-white text-slate-700 font-medium shadow-xl">
+                <div className="mt-5  grid grid-cols-2 sm:grid-cols-4 gap-8 text-center text-base px-8 py-10 rounded-2xl bg-white text-slate-700 font-medium shadow-lg">
                     <div className="flex flex-col items-center gap-2">
                         <p className="text-2xl font-extrabold text-blue-600">15 min</p>
                         <p className="text-slate-500">Average Setup</p>

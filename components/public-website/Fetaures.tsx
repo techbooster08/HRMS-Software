@@ -57,7 +57,7 @@ const Features = () => {
 
     return (
         <>
-            <section className="bg-[#f5f9ff] py-10 px-4 md:px-12">
+            <section className=" py-10 px-4 md:px-12 bg-[#f5f9ff]">
                 <div className="max-w-7xl mx-auto text-center">
                     <h2 className="text-3xl md:text-4xl font-bold mb-3 text-black">Our Powerful Features</h2>
                     <p className="text-gray-600 mb-12 max-w-3xl mx-auto">
@@ -72,7 +72,7 @@ const Features = () => {
                 </div>
 
 
-                <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl max-w-7xl mx-auto text-center py-16 px-6 mt-6">
+                <div className="bg-gradient-to-r from-blue-500 to-indigo-700 text-white rounded-2xl max-w-7xl mx-auto text-center py-16 px-6 mt-6">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">
                         Ready to Experience the Difference?
                     </h2>
@@ -81,10 +81,10 @@ const Features = () => {
                     </p>
 
                     <div className="flex flex-col md:flex-row justify-center gap-4 mb-12">
-                        <button className="bg-white text-blue-600 font-medium py-3 px-6 rounded-full cursor-pointer hover:bg-gray-100 transition">
+                        <button className="bg-white text-blue-600 font-medium py-3 px-6 rounded-full cursor-pointer hover:bg-gray-100 transition active:scale-105">
                             Start Free Trial
                         </button>
-                        <button className="border border-white text-white font-medium py-3 px-6 rounded-full cursor-pointer hover:bg-white hover:text-blue-600 transition">
+                        <button className="border border-white text-white font-medium py-3 px-6 rounded-full cursor-pointer hover:bg-white hover:text-blue-600 transition active:scale-105">
                             View Live Demo
                         </button>
                     </div>
