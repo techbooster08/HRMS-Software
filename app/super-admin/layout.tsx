@@ -13,7 +13,7 @@ export default function SuperAdminLayout({
   return (
     <>
     <Header />
-    <div className="flex flex-row h-screen w-screen bg-amber-400 pt-10">
+    <div className="flex flex-row h-screen w-screen bg-amber-400">
         <Sidebar />
       {children}
     </div>
