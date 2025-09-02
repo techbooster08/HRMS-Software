@@ -90,7 +90,7 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="p-4 sm:p-6 lg:p-8 bg-gray-50 min-h-screen w-full">
+    <div className="p-4 sm:p-6 lg:p-8 bg-gray-50 min-h-screen flex-1 overflow-x-scroll">
       <h1 className="text-3xl font-bold text-gray-900">Super Admin Dashboard</h1>
       <p className="mt-2 text-gray-600">
         Welcome back! Here what&apos;s happening in your organization today.
