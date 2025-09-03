@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import PropTypes from "prop-types";
 import {
   ArrowUp,
   ArrowDown,
@@ -11,7 +10,17 @@ import {
 } from "lucide-react";
 import AttendanceChart from "@/components/super-admin/Attendence";
 
-const StatCard = ({ title, value, icon, iconBgColor, change, changeText, changeType }) => {
+type StatCardProps = {
+  title: string;
+  value: string;
+  icon: React.ReactNode;
+  iconBgColor: string;
+  change: string;
+  changeText: string;
+  changeType: "increase" | "decrease";
+};
+
+const StatCard: React.FC<StatCardProps> = ({ title, value, icon, iconBgColor, change, changeText, changeType }) => {
   const ChangeIcon = changeType === "increase" ? ArrowUp : ArrowDown;
   const changeColor = changeType === "increase" ? "text-green-600" : "text-red-600";
 
@@ -39,18 +48,8 @@ const StatCard = ({ title, value, icon, iconBgColor, change, changeText, changeT
   );
 };
 
-StatCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  icon: PropTypes.node.isRequired,
-  iconBgColor: PropTypes.string.isRequired,
-  change: PropTypes.string.isRequired,
-  changeText: PropTypes.string.isRequired,
-  changeType: PropTypes.oneOf(["increase", "decrease"]).isRequired,
-};
-
 const Dashboard = () => {
-  const stats = [
+  const stats: StatCardProps[] = [
     {
       title: "Total Employees",
       value: "248",
@@ -90,10 +89,10 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="p-4 sm:p-6 lg:p-8 bg-gray-50 min-h-screen flex-1 overflow-x-scroll">
+  <div className="p-4 sm:p-6 lg:p-8 bg-gray-50 min-h-screen flex-1 overflow-x-auto">
       <h1 className="text-3xl font-bold text-gray-900">Super Admin Dashboard</h1>
       <p className="mt-2 text-gray-600">
-        Welcome back! Here what&apos;s happening in your organization today.
+        Welcome back! Here&apos;s what&apos;s happening in your organization today.
       </p>
 
       {/* Stats Grid */}
