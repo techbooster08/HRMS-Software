@@ -177,7 +177,7 @@ const Header = () => {
 };
 
 // Reusable Dropdown Item
-const DropdownItem = ({ icon, text, isDanger = false }) => (
+const DropdownItem = ({ icon, text, isDanger = false } : any) => (
   <button
     type="button"
     className={`w-full flex items-center gap-3 px-4 py-2 text-sm text-left ${isDanger ? "text-red-600 hover:bg-red-50" : "text-gray-700 hover:bg-gray-100"
