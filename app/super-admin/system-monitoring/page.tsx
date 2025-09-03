@@ -162,7 +162,7 @@ const AlertItem: FC<{ alert: Alert }> = ({ alert }) => {
 
 // --- MAIN PAGE COMPONENT ---
 
-const page: FC = () => {
+const Page: FC = () => {
     const [refreshInterval, setRefreshInterval] = useState('30');
     
     return (
@@ -225,4 +225,4 @@ const page: FC = () => {
     );
 };
 
-export default page;
+export default Page;
