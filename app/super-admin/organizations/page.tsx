@@ -71,7 +71,7 @@ const AddOrganizationModal: FC<AddOrganizationModalProps> = ({ isOpen, onClose, 
     };
 
     return (
-        <div className="fixed inset-0  backdrop-blur-[1px] bg-acc z-50 flex justify-center items-center">
+        <div className="fixed inset-0  backdrop-blur-[1px] bg-acc z-50 flex justify-center items-center ">
             <div className="bg-white rounded-lg shadow-xl p-8 w-full max-w-md">
                 <div className="flex justify-between items-center mb-6">
                     <h2 className="text-2xl font-bold text-gray-800">Add New Organization</h2>
@@ -139,7 +139,7 @@ const OrganizationsPage: FC = () => {
 
     return (
         <>
-            <div className="bg-gray-50 overflow-x-scroll w-full p-8">
+            <div className="bg-gray-50 overflow-x-scroll w-full p-8 mt-10">
                 <div className="max-w-7xl mx-auto">
                     {/* Header */}
                     <div className="flex justify-between items-center mb-6">
@@ -147,7 +147,7 @@ const OrganizationsPage: FC = () => {
                             <h1 className="text-3xl font-bold text-gray-800">Organization Management</h1>
                             <p className="text-gray-500 mt-1">Manage all organizations using your HRMS platform</p>
                         </div>
-                        <button onClick={() => setIsModalOpen(true)} className="flex items-center bg-purple-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-purple-700 transition-colors">
+                        <button onClick={() => setIsModalOpen(true)} className="flex items-center bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-purple-700 transition-colors">
                             <Plus size={20} className="mr-2" />
                             Add Organization
                         </button>

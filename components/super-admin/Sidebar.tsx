@@ -12,7 +12,6 @@ import {
     Settings,
     ChevronLeft,
     ChevronRight,
-    Atom,
     LucideProps,
 } from 'lucide-react';
 
@@ -37,11 +36,11 @@ const SidebarLink: FC<SidebarLinkProps> = ({ href, icon: Icon, children, active 
         <div
             className={`flex items-center p-3 my-1 rounded-lg cursor-pointer transition-colors duration-200 ${
                 active
-                    ? 'bg-purple-100 text-purple-700 font-semibold'
+                    ? 'bg-blue-100 text-blue-700 font-semibold'
                     : 'text-gray-600 hover:bg-gray-100'
             }`}
         >
-            <Icon size={20} className={`mr-3 ${active ? 'text-purple-700' : 'text-gray-500'}`} />
+            <Icon size={20} className={`mr-3 ${active ? 'text-blue-700' : 'text-gray-500'}`} />
             <span className="truncate">{children}</span>
         </div>
     </Link>
@@ -61,14 +60,15 @@ const Sidebar: FC =  () => {
         { href: '/super-admin/user-management', label: 'User Management', icon: Users },
         { href: '/super-admin/system-monitoring', label: 'System Monitoring', icon: Activity },
         { href: '/super-admin/analytics-reports', label: 'Analytics & Reports', icon: BarChart2 },
+        { href: '/super-admin/support-center', label: 'Support Center', icon: BarChart2 },
         { href: '/super-admin/global-settings', label: 'Global Settings', icon: Settings },
     ];
 
     return (
-        <aside className={`relative bg-white border-r border-gray-200 flex flex-col transition-width duration-300 ${isCollapsed ? 'w-20' : 'w-64'}`}>   
+        <aside className={`relative bg-white border-r mt-15 border-gray-200 flex flex-col transition-width duration-300 ${isCollapsed ? 'w-20' : 'w-64'}`}>   
              <button 
                 onClick={() => setIsCollapsed(!isCollapsed)} 
-                className="absolute top-1/2 -right-3.5 z-10 p-1 bg-white border-2 border-gray-300 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="absolute top-1/2 -right-3.5 z-10 p-1 bg-white border-2 border-gray-300 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
                 >
                 {isCollapsed ? <ChevronRight size={16} /> : <ChevronLeft size={16} />}
