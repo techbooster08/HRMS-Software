@@ -11,13 +11,14 @@ export default function SuperAdminLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
-    <Header />
-    <div className="flex flex-row h-screen w-screen bg-amber-400">
+    <div className="flex flex-col h-screen w-screen bg-slate-50 overflow-hidden">
+      <Header />
+      <div className="flex flex-1 overflow-hidden">
         <Sidebar />
-      {children}
+        <main className="flex-1 overflow-y-auto p-6">
+          {children}
+        </main>
+      </div>
     </div>
-    
-    </> 
   );
 }
