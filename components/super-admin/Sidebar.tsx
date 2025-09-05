@@ -59,7 +59,6 @@ const Sidebar: FC =  () => {
         { href: '/super-admin/organizations', label: 'Organizations', icon: Building2 },
         { href: '/super-admin/user-management', label: 'User Management', icon: Users },
         { href: '/super-admin/system-monitoring', label: 'System Monitoring', icon: Activity },
-        { href: '/super-admin/analytics-reports', label: 'Analytics & Reports', icon: BarChart2 },
         { href: '/super-admin/support-center', label: 'Support Center', icon: BarChart2 },
         { href: '/super-admin/global-settings', label: 'Global Settings', icon: Settings },
     ];
