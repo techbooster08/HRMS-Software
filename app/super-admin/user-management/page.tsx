@@ -10,60 +10,58 @@ interface User {
     initial: string;
     name: string;
     email: string;
-    organization: string;
-    role: 'Organization Admin' | 'HR Manager';
-    status: 'Active' | 'Trial' | 'Suspended';
+    role: 'Main Super Admin' | 'Admin';
+    status: 'Active' | 'Suspended';
     lastLogin: string;
 }
 
-interface Stat {
-    title: string;
-    count: number;
-    icon: React.ElementType<LucideProps>;
-    color: string;
-    bgColor: string;
-}
+// interface Stat {
+//     title: string;
+//     count: number;
+//     icon: React.ElementType<LucideProps>;
+//     color: string;
+//     bgColor: string;
+// }
 
 // --- MOCK DATA ---
 
 const initialUsers: User[] = [
-    { id: 1, initial: 'PS', name: 'Priya Sharma', email: 'priya.sharma@techcorp.com', organization: 'TechCorp Solutions', role: 'Organization Admin', status: 'Active', lastLogin: '2024-01-20 09:15:00' },
-    { id: 2, initial: 'RG', name: 'Rohan Gupta', email: 'rohan.gupta@digitalinnovations.com', organization: 'Digital Innovations Inc', role: 'Organization Admin', status: 'Active', lastLogin: '2024-01-20 08:45:00' },
-    { id: 3, initial: 'AV', name: 'Anjali Verma', email: 'anjali.verma@startupxyz.com', organization: 'StartupXYZ', role: 'Organization Admin', status: 'Trial', lastLogin: '2024-01-19 16:30:00' },
-    { id: 4, initial: 'SK', name: 'Sameer Khan', email: 'sameer.khan@globalmanufacturing.com', organization: 'Global Manufacturing Ltd', role: 'Organization Admin', status: 'Suspended', lastLogin: '2024-01-15 14:20:00' },
-    { id: 5, initial: 'NS', name: 'Neha Singh', email: 'neha.singh@creativeagencypro.com', organization: 'Creative Agency Pro', role: 'Organization Admin', status: 'Active', lastLogin: '2024-01-20 10:05:00' },
-    { id: 6, initial: 'VR', name: 'Vikram Rathore', email: 'vikram.rathore@techcorp.com', organization: 'TechCorp Solutions', role: 'HR Manager', status: 'Active', lastLogin: '2024-01-20 08:30:00' },
+    { id: 1, initial: 'PS', name: 'Priya Sharma', email: 'priya.sharma@techcorp.com',  role: 'Main Super Admin', status: 'Active', lastLogin: '2024-01-20 09:15:00' },
+    { id: 2, initial: 'RG', name: 'Rohan Gupta', email: 'rohan.gupta@digitalinnovations.com', role: 'Admin', status: 'Active', lastLogin: '2024-01-20 08:45:00' },
+    { id: 3, initial: 'AV', name: 'Anjali Verma', email: 'anjali.verma@startupxyz.com', role: 'Main Super Admin', status: 'Active', lastLogin: '2024-01-19 16:30:00' },
+    { id: 4, initial: 'SK', name: 'Sameer Khan', email: 'sameer.khan@globalmanufacturing.com', role: 'Admin', status: 'Suspended', lastLogin: '2024-01-15 14:20:00' },
+    { id: 5, initial: 'NS', name: 'Neha Singh', email: 'neha.singh@creativeagencypro.com', role: 'Main Super Admin', status: 'Active', lastLogin: '2024-01-20 10:05:00' },
+    { id: 6, initial: 'VR', name: 'Vikram Rathore', email: 'vikram.rathore@techcorp.com',  role: 'Admin', status: 'Active', lastLogin: '2024-01-20 08:30:00' },
 ];
 
-const stats: Stat[] = [
-    { title: 'Super Admins', count: 1, icon: ShieldCheck, color: 'text-violet-600', bgColor: 'bg-violet-100' },
-    { title: 'Org Admins', count: 5, icon: Users, color: 'text-blue-600', bgColor: 'bg-blue-100' },
-    { title: 'HR Managers', count: 1, icon: Briefcase, color: 'text-green-600', bgColor: 'bg-green-100' },
-    { title: 'Employees', count: 1, icon: UserIcon, color: 'text-orange-600', bgColor: 'bg-orange-100' },
-];
+// const stats: Stat[] = [
+//     { title: 'Super Admins', count: 1, icon: ShieldCheck, color: 'text-violet-600', bgColor: 'bg-violet-100' },
+//     { title: 'Org Admins', count: 5, icon: Users, color: 'text-blue-600', bgColor: 'bg-blue-100' },
+//     { title: 'HR Managers', count: 1, icon: Briefcase, color: 'text-green-600', bgColor: 'bg-green-100' },
+//     { title: 'Employees', count: 1, icon: UserIcon, color: 'text-orange-600', bgColor: 'bg-orange-100' },
+// ];
 
 
 // --- REUSABLE COMPONENTS ---
 
-interface StatCardProps { stat: Stat; }
-const StatCard: FC<StatCardProps> = ({ stat }) => (
-    <div className="bg-white p-6 rounded-xl border border-gray-200 flex items-center justify-between">
-        <div className="flex items-center">
-            <div className={`p-3 rounded-lg ${stat.bgColor}`}>
-                <stat.icon className={`h-6 w-6 ${stat.color}`} />
-            </div>
-            <p className="ml-4 text-gray-600 font-medium">{stat.title}</p>
-        </div>
-        <p className="text-3xl font-bold text-gray-800">{stat.count}</p>
-    </div>
-);
+// interface StatCardProps { stat: Stat; }
+// const StatCard: FC<StatCardProps> = ({ stat }) => (
+//     <div className="bg-white p-6 rounded-xl border border-gray-200 flex items-center justify-between">
+//         <div className="flex items-center">
+//             <div className={`p-3 rounded-lg ${stat.bgColor}`}>
+//                 <stat.icon className={`h-6 w-6 ${stat.color}`} />
+//             </div>
+//             <p className="ml-4 text-gray-600 font-medium">{stat.title}</p>
+//         </div>
+//         <p className="text-3xl font-bold text-gray-800">{stat.count}</p>
+//     </div>
+// );
 
 interface StatusBadgeProps { status: User['status']; }
 const StatusBadge: FC<StatusBadgeProps> = ({ status }) => {
     const baseClasses = "px-3 py-1 text-xs font-semibold rounded-full";
     const statusClasses = {
         Active: "bg-green-100 text-green-700",
-        Trial: "bg-blue-100 text-blue-700",
         Suspended: "bg-red-100 text-red-700",
     };
     return <span className={`${baseClasses} ${statusClasses[status]}`}>{status}</span>;
@@ -73,8 +71,8 @@ interface RoleBadgeProps { role: User['role']; }
 const RoleBadge: FC<RoleBadgeProps> = ({ role }) => {
     const baseClasses = "px-3 py-1 text-xs font-semibold rounded-full border";
     const roleClasses = {
-        'Organization Admin': 'bg-blue-50 border-blue-200 text-blue-600',
-        'HR Manager': 'bg-green-50 border-green-200 text-green-600',
+        'Main Super Admin': 'bg-blue-50 border-blue-200 text-blue-600',
+        'Admin': 'bg-green-50 border-green-200 text-green-600',
     };
     return <span className={`${baseClasses} ${roleClasses[role]}`}>{role}</span>;
 };
@@ -95,16 +93,15 @@ const UserRow: FC<UserRowProps> = ({ user, onViewDetails }) => (
                 </div>
             </div>
         </td>
-        <td className="py-4 px-6 text-gray-600">{user.organization}</td>
         <td className="py-4 px-6"><RoleBadge role={user.role} /></td>
         <td className="py-4 px-6"><StatusBadge status={user.status} /></td>
         <td className="py-4 px-6 text-gray-600">{user.lastLogin}</td>
         <td className="py-4 px-6">
             <div className="flex items-center space-x-3">
-                 <button className="text-gray-400 hover:text-gray-600"><Clock size={18} /></button>
-                 <button onClick={() => onViewDetails(user)} className="text-gray-400 hover:text-gray-600"><Eye size={18} /></button>
-                 <button className="text-gray-400 hover:text-gray-600"><Pen size={18} /></button>
-                 <button className="text-gray-400 hover:text-red-600"><Trash2 size={18} /></button>
+                <button className="text-gray-400 hover:text-gray-600"><Clock size={18} /></button>
+                <button onClick={() => onViewDetails(user)} className="text-gray-400 hover:text-gray-600"><Eye size={18} /></button>
+                <button className="text-gray-400 hover:text-gray-600"><Pen size={18} /></button>
+                <button className="text-gray-400 hover:text-red-600"><Trash2 size={18} /></button>
             </div>
         </td>
     </tr>
@@ -122,20 +119,19 @@ const UserDetailsModal: FC<UserDetailsModalProps> = ({ user, onClose }) => {
                 </div>
                 <div className="p-8 space-y-5">
                     <div className="flex items-center">
-                         <div className="w-16 h-16 rounded-full bg-violet-500 text-white flex items-center justify-center font-bold text-2xl mr-6">{user.initial}</div>
+                        <div className="w-16 h-16 rounded-full bg-violet-500 text-white flex items-center justify-center font-bold text-2xl mr-6">{user.initial}</div>
                         <div>
                             <p className="text-xl font-bold text-gray-900">{user.name}</p>
                             <p className="text-md text-gray-500">{user.email}</p>
                         </div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 pt-4">
-                        <div><p className="text-sm font-medium text-gray-500">Organization</p><p className="text-md font-semibold text-gray-800">{user.organization}</p></div>
                         <div><p className="text-sm font-medium text-gray-500">Role</p><p className="text-md font-semibold text-gray-800"><RoleBadge role={user.role} /></p></div>
                         <div><p className="text-sm font-medium text-gray-500">Status</p><p className="text-md font-semibold text-gray-800"><StatusBadge status={user.status} /></p></div>
                         <div><p className="text-sm font-medium text-gray-500">Last Login</p><p className="text-md font-semibold text-gray-800">{user.lastLogin}</p></div>
                     </div>
                 </div>
-                 <div className="bg-gray-50 px-6 py-4 rounded-b-2xl text-right">
+                <div className="bg-gray-50 px-6 py-4 rounded-b-2xl text-right">
                     <button onClick={onClose} className="px-5 py-2 bg-gray-200 text-gray-700 font-semibold rounded-lg hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">Close</button>
                 </div>
             </div>
@@ -144,22 +140,22 @@ const UserDetailsModal: FC<UserDetailsModalProps> = ({ user, onClose }) => {
 };
 
 type NewUserData = Omit<User, 'id' | 'initial' | 'status' | 'lastLogin'>;
-interface AddUserModalProps { 
-    isOpen: boolean; 
-    onClose: () => void; 
-    onAddUser: (user: NewUserData) => void; 
+interface AddUserModalProps {
+    isOpen: boolean;
+    onClose: () => void;
+    onAddUser: (user: NewUserData) => void;
 }
 const AddUserModal: FC<AddUserModalProps> = ({ isOpen, onClose, onAddUser }) => {
     const [name, setName] = useState<string>('');
     const [email, setEmail] = useState<string>('');
-    const [organization, setOrganization] = useState<string>('');
-    const [role, setRole] = useState<User['role']>('Organization Admin');
+    // const [organization, setOrganization] = useState<string>('');
+    const [role, setRole] = useState<User['role']>('Main Super Admin');
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        if (!name || !email || !organization) return; 
-        onAddUser({ name, email, organization, role });
-        setName(''); setEmail(''); setOrganization(''); setRole('Organization Admin');
+        if (!name || !email) return;
+        onAddUser({ name, email, role });
+        setName(''); setEmail(''); setRole('Main Super Admin');
         onClose();
     };
 
@@ -183,10 +179,6 @@ const AddUserModal: FC<AddUserModalProps> = ({ isOpen, onClose, onAddUser }) => 
                             <input type="email" value={email} onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)} className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required />
                         </div>
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1">Organization</label>
-                            <input type="text" value={organization} onChange={(e: ChangeEvent<HTMLInputElement>) => setOrganization(e.target.value)} className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required />
-                        </div>
-                         <div>
                             <label className="block text-sm font-medium text-gray-700 mb-1">Role</label>
                             <select value={role} onChange={(e: ChangeEvent<HTMLSelectElement>) => setRole(e.target.value as User['role'])} className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500">
                                 <option>Organization Admin</option>
@@ -220,8 +212,7 @@ const UserManagement: FC = () => {
         if (searchTerm) {
             currentUsers = currentUsers.filter(user =>
                 user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                user.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                user.organization.toLowerCase().includes(searchTerm.toLowerCase())
+                user.email.toLowerCase().includes(searchTerm.toLowerCase())
             );
         }
         if (selectedRole !== 'All Roles') {
@@ -235,7 +226,7 @@ const UserManagement: FC = () => {
 
     const handleViewDetails = (user: User) => setViewingUser(user);
     const handleCloseModal = () => setViewingUser(null);
-    
+
     const handleAddUser = (newUser: NewUserData) => {
         const getInitials = (name: string): string => name.split(' ').map(n => n[0]).join('').toUpperCase();
         const userToAdd: User = {
@@ -264,37 +255,36 @@ const UserManagement: FC = () => {
                     </button>
                 </header>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                     {stats.map(stat => <StatCard key={stat.title} stat={stat} />)}
-                </div>
+                </div> */}
 
                 <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
                     <div className="p-4 flex flex-col sm:flex-row items-center justify-between border-b border-gray-200 bg-gray-50/50">
                         <div className="w-full sm:w-auto flex items-center border border-gray-300 rounded-lg bg-white focus-within:ring-2 focus-within:ring-blue-500">
-                            <Search className="h-5 w-5 text-gray-400 mx-3"/>
+                            <Search className="h-5 w-5 text-gray-400 mx-3" />
                             <input type="text" placeholder="Search users..." className="py-2 pr-3 w-full focus:outline-none rounded-r-lg" value={searchTerm} onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value)} />
                         </div>
                         <div className="w-full sm:w-auto flex items-center space-x-4 mt-4 sm:mt-0">
                             <select className="border border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500" value={selectedRole} onChange={(e: ChangeEvent<HTMLSelectElement>) => setSelectedRole(e.target.value)}>
                                 <option>All Roles</option>
-                                <option>Organization Admin</option>
-                                <option>HR Manager</option>
+                                <option>Main Super Admin</option>
+                                <option>Amin</option>
                             </select>
-                             <select className="border border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500" value={selectedStatus} onChange={(e: ChangeEvent<HTMLSelectElement>) => setSelectedStatus(e.target.value)}>
+                            <select className="border border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500" value={selectedStatus} onChange={(e: ChangeEvent<HTMLSelectElement>) => setSelectedStatus(e.target.value)}>
                                 <option>All Status</option>
                                 <option>Active</option>
-                                <option>Trial</option>
+                                {/* <option>Trial</option> */}
                                 <option>Suspended</option>
                             </select>
                         </div>
-                         <div className="hidden lg:block text-sm text-gray-600">Total: {filteredUsers.length} users</div>
+                        <div className="hidden lg:block text-sm text-gray-600">Total: {filteredUsers.length} users</div>
                     </div>
                     <div className="overflow-x-auto">
                         <table className="w-full text-sm text-left">
                             <thead className="bg-gray-50 border-b border-gray-200 text-xs text-gray-500 uppercase tracking-wider">
                                 <tr>
                                     <th scope="col" className="py-3 px-6 font-medium">User</th>
-                                    <th scope="col" className="py-3 px-6 font-medium">Organization</th>
                                     <th scope="col" className="py-3 px-6 font-medium">Role</th>
                                     <th scope="col" className="py-3 px-6 font-medium">Status</th>
                                     <th scope="col" className="py-3 px-6 font-medium">Last Login</th>

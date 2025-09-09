@@ -2,6 +2,7 @@
 
 import { FC, useState, FormEvent } from 'react';
 import { Plus, Search, Pencil, Eye, Trash2, X } from 'lucide-react';
+import Link from 'next/link';
 
 // --- TYPE DEFINITIONS ---
 type OrganizationPlan = 'Enterprise' | 'Professional' | 'Starter';
@@ -83,19 +84,19 @@ const AddOrganizationModal: FC<AddOrganizationModalProps> = ({ isOpen, onClose, 
                     <div className="space-y-4">
                         <div>
                             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Organization Name *</label>
-                            <input type="text" name="name" id="name" required className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none" placeholder="Enter organization name" />
+                            <input type="text" name="name" id="name" required className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" placeholder="Enter organization name" />
                         </div>
                         <div>
                             <label htmlFor="domain" className="block text-sm font-medium text-gray-700 mb-1">Domain *</label>
-                            <input type="text" name="domain" id="domain" required className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none" placeholder="company.com" />
+                            <input type="text" name="domain" id="domain" required className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" placeholder="company.com" />
                         </div>
                         <div>
                             <label htmlFor="adminEmail" className="block text-sm font-medium text-gray-700 mb-1">Admin Email *</label>
-                            <input type="email" name="adminEmail" id="adminEmail" required className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none" placeholder="admin@company.com" />
+                            <input type="email" name="adminEmail" id="adminEmail" required className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" placeholder="admin@company.com" />
                         </div>
                         <div>
                             <label htmlFor="plan" className="block text-sm font-medium text-gray-700 mb-1">Plan *</label>
-                            <select name="plan" id="plan" required className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none">
+                            <select name="plan" id="plan" required className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
                                 <option value="Starter">Starter - Up to 50 employees</option>
                                 <option value="Professional">Professional - Up to 500 employees</option>
                                 <option value="Enterprise">Enterprise - 500+ employees</option>
@@ -104,7 +105,7 @@ const AddOrganizationModal: FC<AddOrganizationModalProps> = ({ isOpen, onClose, 
                     </div>
                     <div className="flex justify-end gap-4 mt-8">
                         <button type="button" onClick={onClose} className="px-4 py-2 bg-gray-200 text-gray-800 font-semibold rounded-lg hover:bg-gray-300">Cancel</button>
-                        <button type="submit" className="px-4 py-2 bg-purple-600 text-white font-semibold rounded-lg shadow-md hover:bg-purple-700">Create Organization</button>
+                        <button type="submit" className="px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700">Create Organization</button>
                     </div>
                 </form>
             </div>
@@ -124,8 +125,8 @@ const OrganizationsPage: FC = () => {
         const newOrg: Organization = {
             id: organizations.length + 1,
             ...newOrgData,
-            adminName: 'New Admin', // Placeholder
-            employees: 0, // Placeholder
+            adminName: 'New Admin',
+            employees: 0,
             status: 'Active',
             lastActive: new Date().toISOString().split('T')[0],
         };
@@ -210,7 +211,9 @@ const OrganizationsPage: FC = () => {
                                         <td className="p-4">
                                             <div className="flex items-center gap-3">
                                                 <button className="text-gray-500 hover:text-purple-600"><Pencil size={18} /></button>
-                                                <button className="text-gray-500 hover:text-blue-600"><Eye size={18} /></button>
+                                                <Link href={`/super-admin/organizations/${org.id}`}>
+                                                    <button className="text-gray-500 hover:text-blue-600"><Eye size={18} /></button>
+                                                </Link>
                                                 <button className="text-gray-500 hover:text-red-600"><Trash2 size={18} /></button>
                                             </div>
                                         </td>
